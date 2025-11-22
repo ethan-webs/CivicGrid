@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicGrid - Smart City Infrastructure Platform</title>
+    <meta name="description" content="CivicGrid provides intelligent infrastructure solutions for smart cities, improving quality of life for 5 million citizens worldwide.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23005B96'%3E%3Cpath d='M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h6v2H7v-2z'/%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span class="top-bar-text">Now serving 5 million citizens worldwide.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <div class="logo">
+                        <i class="fas fa-city"></i>
+                        <span>CivicGrid</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#platform">Platform</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#impact">Impact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#case-studies">Case Studies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#for-cities">For Cities</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Smarter Infrastructure for a Better Quality of Life</h1>
+                    <p class="hero-subtitle">Transform your city with intelligent traffic management, environmental monitoring, and data-driven public services that improve efficiency and citizen satisfaction.</p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary btn-lg me-3" onclick="downloadWhitepaper()">
+                            <i class="fas fa-download me-2"></i>Download Whitepaper
+                        </button>
+                        <button class="btn btn-outline-light btn-lg" onclick="scrollToSection('platform')">
+                            <i class="fas fa-play me-2"></i>Watch Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-visualization">
+                        <canvas id="trafficChart" width="400" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Modules -->
+    <section id="platform" class="platform-modules">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Platform Modules</h2>
+                    <p class="section-subtitle">Comprehensive solutions for modern urban challenges</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-traffic-light"></i>
+                        </div>
+                        <h3>Intelligent Traffic</h3>
+                        <p>AI-powered traffic light optimization reduces congestion by up to 40% and improves emergency response times.</p>
+                        <div class="module-stats">
+                            <span class="stat-number">40%</span>
+                            <span class="stat-label">Reduction in Traffic</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Environmental Sensors</h3>
+                        <p>Real-time air quality monitoring and pollution tracking to protect citizen health and environment.</p>
+                        <div class="module-stats">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Monitoring</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Public Safety</h3>
+                        <p>Smart surveillance and emergency response systems that enhance security while respecting privacy.</p>
+                        <div class="module-stats">
+                            <span class="stat-number">35%</span>
+                            <span class="stat-label">Faster Response</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h3>Waste Management</h3>
+                        <p>Optimized collection routes and smart bins reduce operational costs and improve city cleanliness.</p>
+                        <div class="module-stats">
+                            <span class="stat-number">25%</span>
+                            <span class="stat-label">Cost Savings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- City Case Study -->
+    <section id="case-studies" class="case-study">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Case Study: Singapore Smart Nation Initiative</h2>
+                    <p class="section-subtitle">Real results from our partnership with Singapore's government</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="case-study-content">
+                        <h3>Before CivicGrid Implementation</h3>
+                        <ul class="before-list">
+                            <li><i class="fas fa-times text-danger me-2"></i>Average commute time: 45 minutes</li>
+                            <li><i class="fas fa-times text-danger me-2"></i>Traffic congestion cost: $2.4B annually</li>
+                            <li><i class="fas fa-times text-danger me-2"></i>Emergency response time: 8.5 minutes</li>
+                            <li><i class="fas fa-times text-danger me-2"></i>Waste collection efficiency: 65%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="case-study-content">
+                        <h3>After CivicGrid Implementation</h3>
+                        <ul class="after-list">
+                            <li><i class="fas fa-check text-success me-2"></i>Average commute time: 28 minutes</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Traffic congestion cost: $1.2B annually</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Emergency response time: 5.2 minutes</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Waste collection efficiency: 89%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="impact-metrics">
+                        <canvas id="impactChart" width="800" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Privacy -->
+    <section id="security" class="security-privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Security & Privacy</h2>
+                    <p class="section-subtitle">Your data security is our top priority</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="security-card">
+                        <div class="security-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Data Anonymization</h3>
+                        <p>All personal data is automatically anonymized using advanced encryption techniques, ensuring citizen privacy while maintaining data utility.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="security-card">
+                        <div class="security-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <h3>End-to-End Encryption</h3>
+                        <p>Military-grade encryption protects all data in transit and at rest, with regular security audits and compliance certifications.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="security-card">
+                        <div class="security-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Privacy by Design</h3>
+                        <p>Our platform is built with privacy-first principles, giving citizens control over their data and transparent reporting on usage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <i class="fas fa-city"></i>
+                            <span>CivicGrid</span>
+                        </div>
+                        <p>Empowering cities worldwide with intelligent infrastructure solutions for a better tomorrow.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">White Papers</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Newsroom</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Press Releases</a></li>
+                        <li><a href="#">Media Kit</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Contact for Municipal RFPs</h5>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope me-2"></i>rfp@civicgrid.com</p>
+                        <p><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>123 Smart City Ave, Tech District</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-bottom">© 2025 CivicGrid. Developed by <a href="https://rivertheme.com/" target="_blank" rel="noopener noreferrer" class="footer-link-highlight">RiverTheme</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
