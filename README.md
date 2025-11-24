@@ -169,13 +169,6 @@ The website is fully responsive and optimized for:
 - **Tablet**: 768px - 1199px (optimized layout)
 - **Mobile**: 320px - 767px (stacked layout, touch-friendly)
 
-## 🔧 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
 ## 📈 Performance
 
 - Optimized loading with CDN resources
